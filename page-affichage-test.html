@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page Test</title>
+    <link rel="stylesheet" type="text/css" href="Style_page-affichage-test.css">
+</head>
+<header>
+    <nav class="MainHead">
+        <div class="logoHead">
+            <a href="index.html"><img src="logo.png"></a>
+        </div>
+        <ul>
+            <li class="HeadAcceuil"><a href="index.html">Acceuil</a></li>
+            <li class="HeadAboutUS"><a href="a-propos.html">A propus de nous</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Statistiques</a></li>
+            <li><a href="#">Contact</a></li>
+            <li class="account"><a href="login.html">S'inscrire</a></li>
+        </ul>
+
+    </nav>
+</header>
+<body>
+<body>
+<article class="welcome-band">
+    <div class="profil-picture-user">
+        <img id="profil_picture" src="empty-profil-image.png">
+    </div>
+    <h1 id="welcome_message">Bienvenue [insert user name]</h1>
+</article>
+<div class="interaction_user_info">
+    <article class="results-user-test">
+        <div class="display_result" id="bpm-test">
+            <img src="https://static.thenounproject.com/png/682861-200.png", style="padding-top:30px;">
+            <h1>135 BPM</h1>
+            <p class = "Test--Title">Element1 [nom du test BPM]</p>
+        </div>
+        <div class="display_result" id="Light-Reaction-test">
+            <img src="https://cdn.iconscout.com/icon/free/png-256/timer-83-470366.png", style="padding-top: 20px;">
+            <h1>500 ms</h1>
+            <p class = "Test--Title">Element2 [nom du test LRT]</p>
+        </div>
+        <div class="display_result" id="Sound-Reaction-test">
+            <img src="https://cdn.iconscout.com/icon/free/png-256/timer-83-470366.png", style="padding-top: 20px;">
+            <h1>300 ms</h1>
+            <p class = "Test--Title">Element3 [nom du test SRT]</p>
+        </div>
+        <div class="display_result" id="Temperature-test">
+            <img src="https://cdn.iconscout.com/icon/free/png-256/thermometer-2668078-2214254.png", style="padding-top: 20px;">
+            <h1>1000 °C</h1>
+            <p class = "Test--Title">Element4 [nom du test TMP]</p>
+        </div>
+    </article>
+    <article class="Input-Modification-user">
+        <form>
+
+            <h1>NOMS</h1>
+            <input type="text" id="nom-user-input" name="name" required
+                   minlength="1" maxlength="8" size="18">
+            <h1>Prenom</h1>
+            <input type="text" id="prenom-user-input" name="name" required
+                   minlength="1" maxlength="8" size="18">
+            <h1>Age</h1>
+            <input type="text" id="Age-user-input" name="name" required
+                   minlength="1" maxlength="8" size="18"></form>
+
+    </article>
+</div>
+
+</body>
+</html>

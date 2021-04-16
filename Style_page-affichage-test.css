@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "segeo UI";
+}
+
+header{
+    background: #2c2f37;
+}
+nav{
+    display: flex;
+}
+
+nav ul{
+    display: flex;
+    flex: 1 1 40rem;
+    list-style-type: none;
+    margin-top: 40px;
+    justify-content: space-around;
+}
+.logoHead{
+    display: flex;
+    flex : 1 1 40rem
+}
+
+
+ul li a{
+    text-decoration: none;
+    color:white;
+    padding: 5px;
+    border: solid transparent;
+    transition: 0.4s ease;
+    border-radius: 10px;
+}
+
+ul li a:hover{
+    background-color: skyblue;
+    color: black;
+}
+
+ul li.HeadAcceuil a{
+    background-color: white;
+    color: black;
+}
+
+ul li.account a{
+    background-color: #417dde;
+    color: white;
+}
+
+.logoHead img{
+    width: 100px;
+    height: auto;
+    margin-top: 20px;
+}
+body{
+    background-color: skyblue;
+}
+
+.welcome-band{
+    display: flex;
+    justify-content: space-around;
+}
+
+.profil-picture-user #profil_picture{
+    width: 150px;
+    height: auto;
+    border: solid transparent;
+    border-radius: 50px;
+    margin: 70px;
+
+}
+
+#welcome_message{
+    margin: 70px;
+}
+.interaction_user_info{
+    display: flex;
+    justify-content: space-around;
+}
+.results-user-test{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap : 30px;
+    border: solid;
+    border-color: #2c2f37;
+}
+#bpm-test{
+    grid-column: 1/2;
+    grid-row: 1;
+}
+#Light-Reaction-test{
+    grid-column: 2;
+    grid-row: 2;
+}
+#Sound-Reaction-test{
+    grid-column: 2;
+    grid-row: 1/2;
+}
+#Temperature-test{
+    grid-column: 1/2;
+    grid-row:2;
+}
