@@ -71,6 +71,7 @@ ul li.account a{
 	padding-top: 40px;
 	padding-bottom: 40px;
     font-size: 30px;
+    color: white;
     justify-content: space-around;
     float: left;
     width: 100%;
@@ -78,10 +79,11 @@ ul li.account a{
     /*padding: 7px;*/
     /*background-color: #4286F4;*/
     /*background-color:#7aadffb4;*/
-    background-image: url('https://cdn.radiofrance.fr/s3/cruiser-production/2020/07/22abca91-5ec1-4a64-8243-66572173a4ed/870x489_gettyimages-1157513837.jpg');
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('https://static.timesofisrael.com/www/uploads/2013/01/F100530MS30.jpg');
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
+
 }
 hr{
 	width:25%;
