@@ -19,18 +19,19 @@ header{
     background-position: center;
 }
 
-ul{
+.menu ul{
     float:right;
     list-style-type: none;
     margin-top: 50px;
+    list-style-type: none;
 }
 
-ul li{
+.menu ul li{
     display: inline-block;
     margin-right: 15px;
 }
 
-ul li a{
+.menu ul li a{
     text-decoration: none;
     color: #fff;
     padding: 5px 15px;
@@ -39,17 +40,17 @@ ul li a{
     border-radius: 10px;
 }
 
-ul li a:hover{
+.menu ul li a:hover{
     background-color: #fff;
     color: black;
 }
 
-ul li.active a{
+.menu ul li.active a{
     background-color: white;
     color: black;
 }
 
-ul li.account a{
+.menu ul li.account a{
     background-color: #417dde;
     color: white;
 }
@@ -78,6 +79,7 @@ body{
 	position:relative;
 	background:#f9f9f959; 
     border-radius: 40px;
+    padding-bottom: 40px;
 }
 
 .center form{
@@ -197,11 +199,12 @@ fieldset {
 }
 
 .informations{
-    margin:0 50px;
+    margin:40px 120px;
 }
 
 .bas-formulaire{
     display: flex;
+    padding-right: 40px;
 }
 
 .footer{
@@ -210,6 +213,7 @@ fieldset {
     color: white;
     height: 300px;
     position: relative;
+    margin-top: 60px;
 }
 
 .footer-section{
@@ -256,4 +260,27 @@ fieldset {
     bottom: 0px;
     left: 0px;
     padding-top: 20px;
+}
+
+.sitemap ul{
+    color: white;
+}
+
+.sitemap ul li{
+    display: inline-block;
+    margin-right: 15px;
+    width: 100%;
+}
+
+.sitemap ul li a{
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 15px;
+    border: solid transparent;
+    transition: 0.4s ease;
+    border-radius: 10px;
+}
+.sitemap{
+    margin-top: 20px;
+    height:100px;
 }
