@@ -6,7 +6,7 @@
 
 header{
     background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
-    height: 17vh;
+    height: 140px;
     background-size: cover;
     background-position: center;
 }
@@ -161,4 +161,7 @@ hr{
     bottom: 0px;
     left: 0px;
     padding-top: 20px;
+}
+.sitemap{
+    margin: 0;
 }
