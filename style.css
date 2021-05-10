@@ -71,14 +71,14 @@ ul li.account a{
 
 .intro{
     position: absolute;
-    top: 65%;
+    top: 68%;
     left: 50%;
     transform: translate(-50%,-50%);
 }
 
 .intro h2{
     color: white;
-    font-size: 40px;
+    font-size: 30px;
 }
 
 .page-wrapper{
