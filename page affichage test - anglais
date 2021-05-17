@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aeropex</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="main">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo.png">
+                </a>
+            </div>
+            <ul>
+                <li class="active"><a href="#">Accueil</a></li>
+                <li><a href="a-propos.html">A propos de nous</a></li>
+                <li><a href="FAQ.html">FAQ</a></li>
+                <li><a href="#">Statistiques</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="account"><a href="index.php">S'inscrire</a></li>
+            </ul>
+        </div>
+        <div class="title">
+            <h1>AEROPEX</h1>
+        </div>
+        <div class="intro">
+            <h2 align="center">
+                « The higher we rise, the smaller we seem to those who cannot fly. » <br> Friedrich Nietzsche
+            </h2>
+        </div>
+    </header>
+
+<section id="explain">
+    <div class="title-text">
+        <h1>WHY DO THESE TESTS?</h1>
+            <div class = "description">
+                <p align="justify">
+                As the flagship of the French Army and the country's international showcase, the French Air Force and Naval 
+Aviation have some of the most highly trained personnel in the world. With such prestige, the army must assume 
+this reputation in order to show its veracity. This is why the French Ministry of the Army, through the 
+intermediary of the psycho-technical testing company INFINITE MEASURES, has commissioned us to carry out a 
+battery of tests aimed at evaluating the aptitude of potential future fighter pilots to operate in difficult and 
+stressful situations. Their stress management, understanding of orders and reflexes will be put to the test in 
+order to detect any possible inability to perform a job that requires a lot of resources. Thus, this test serves 
+as a kind of "first skimming" to keep only the most suitable students. Afterwards, further tests will be conducted
+to evaluate the remaining candidates. Only the best will be selected. The set of tests that we have carried out 
+is therefore intended for the student pilots of the army. If you are between 18 and 26 years old, and you wish to
+test your capacities in order to apply in the army, we invite you to contact INFINITE MEASURES, which will be able
+to inform you in your research, and will redirect you to us if your candidature seems to them possible.
+</p>
+            </div>
+    </div>
+
+</section>
+
+<section id="tests">
+    <div class="title-tests">
+        <h1>WHAT ARE THEY?</h1>
+        <div class = "description">
+                <p align="justify"> The user will perform ten minutes of tests targeting different abilities. He will have to face several exercises 
+intended to evaluate his capacity to react in a proportionate way to certain conditions: during the said test, he 
+will have to carry out the following tests, four in number: restitution of a tone transmitted by radio, evaluation 
+of his heart rate and of the surface temperature of his skin to gauge his resistance to stress, and finally 
+reaction time to an expected sound and to an unexpected light. To follow these tests and to be guided throughout 
+the test, a small LCD screen will be made available with the instructions of the test as well as a countdown 
+before the test starts.</p>
+            </div>
+        <div class="row">
+            <div class="column">
+                <h4>Heart rate sensor</h4>
+                <img src="https://static.thenounproject.com/png/682861-200.png", style="padding-top: 30px;">
+                <div class="cardiac">
+                Your heart rate is measured throughout the test to produce an average and to capture possible excessive changes 
+in heart rate during a stressful episode.
+                </div>
+            </div>
+            <div class="column">
+                <h4>Temperature sensor</h4>
+                <img src="https://cdn.iconscout.com/icon/free/png-256/thermometer-2668078-2214254.png", style="padding-top: 20px;">
+                <div class="temp">
+                    The surface temperature of your skin will be analyzed at several points during the test, by the contact of your 
+finger with a temperature sensor.
+                </div>
+            </div>
+            <div class="column">
+                <h4>Reaction time test</h4>
+                <img src="https://cdn.iconscout.com/icon/free/png-256/timer-83-470366.png", style="padding-top: 20px;">
+                <div class="react">
+                    This part is divided into two parts. First, the reaction time to an expected sound: your ability to react quickly 
+to a command is tested. Second, the reaction time to an unexpected light: how will you evolve in an unstable 
+environment?
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="stats">
+    <div class="title-stats">
+        <h1>KEY FIGURES</h1>
+        <div class="row">
+            <div class="data-column">
+                <h1>25</h1> ms
+            </div>
+            <div class="data-column">
+                <h1>98</h1>  BPM
+            </div>
+            <div class="data-column">
+                <h1>59</h1> tests
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="trust">
+    <div class="title-trust">
+        <h1>THEY TRUST US</h1>
+        <div class="row">
+            <div class="trust-column">
+                <img src="logo-im.png">
+            </div>
+            <div class="trust-column">
+                <img src="logo-isep.png">
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="page-wrapper">
+
+</div>
+
+
+
+<section class="footer">
+    <div class="footer-content">
+            <div class="footer-section">
+                <h4>INFORMATION</h4>
+                <div class="info-buttons">
+                    <a href="CGU.html" class="info-button">Terms and Conditions of Use</a>
+                    <a href="mentions-légales.html" class="info-button">Legal Notice</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>LOCATION</h4>
+                <div class="mapouter">
+                    <div class="gmap_canvas">
+                        <iframe width="300" height="200" id="gmap_canvas" src="https://maps.google.com/maps?q=ISEP&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                        <a href="https://123movies-to.org"></a><br><style>.mapouter{position:center;text-align:right;height:200px;width:300px;}</style>
+                        <a href="https://www.embedgooglemap.net">embedgooglemap.net</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:200px;width:300px;}</style>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>CONTACT US</h4>
+                <div class="contact-info">
+                    <p class="mail">Mail : testpsycho@aeropex.com</p>
+                    <p>Phone : 0112345678</p>
+                </div>
+            </div>
+    </div>
+
+    <div class="footer-bottom">
+        Aeropex G7C 2021
+    </div>
+</section>
+
+</body>
+</html>
