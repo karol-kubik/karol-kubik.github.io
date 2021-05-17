@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>FAQ</title>
+    <link rel="stylesheet" type="text/css" href="FAQ.css">
+    
+</head>
+<body>
+    <header>
+		<div class="main">
+			<div class="logo">
+				<a href="index.html">
+					<img src="logo.png">
+				</a>
+			</div>
+			<ul>
+				<li><a href="index.html">Accueil</a></li>
+				<li><a href="a-propos.html">À propos de nous</a></li>
+				<li class="active"><a href="FAQ.html">FAQ</a></li>
+				<li><a href="#">Statistiques</a></li>
+				<li><a href="contact.html">Contact</a></li>
+				<li class="account"><a href="login.html">S'inscrire</a></li>
+				<li class="flag"><a href="#" title="Français">
+					<img alt="drapeau français" src="https://cdn1.iconfinder.com/data/icons/flags-of-the-world-2/128/france-circle-512.png" width="30" height="30" />
+				</a></li>
+			</ul>
+		</div>
+
+	</header>
+        <div class="container">
+            <h1>FAQ</h1>
+            <h2>All the answers to your questions</h2>
+            <button class="accordion">Who can I send a message to if I have forgotten my login/password?</button>
+            <div class="panel">
+                <p>Lorem ipsum...</p>
+            </div>
+
+            <button class="accordion">How long does it take to get my results? </button>
+            <div class="panel">
+                <p>Lorem ipsum...</p>
+            </div>
+
+            <button class="accordion">What are your requirements for your suppliers? </button>
+            <div class="panel">
+                <p>Lorem ipsum...</p>
+            </div> 
+
+            <button class="accordion">How can I exercise my privacy rights?</button>
+            <div class="panel">
+                <p>Lorem ipsum...</p>
+            </div> 
+
+            <button class="accordion">How reliable are your tests?</button>
+            <div class="panel">
+                <p>Lorem ipsum...</p>
+            </div> 
+
+            <button class="accordion"> How can I contact you?</button>
+            <div class="panel">
+                <p>Lorem ipsum...</p>
+            </div> 
+
+            <button class="accordion">Is your customer service available?</button>
+            <div class="panel">
+                <p>Lorem ipsum...</p>
+            </div> 
+
+            <button class="accordion">I would like to postpone my appointment, what should I do?</button>
+            <div class="panel">
+                <p>Lorem ipsum...</p>
+            </div> 
+
+            <button class="accordion">Where do the materials used in your products come from ?</button>
+            <div class="panel">
+                <p>Lorem ipsum...</p>
+            </div> 
+
+            <button class="accordion">How are the test results presented ?</button>
+            <div class="panel">
+                <p>Lorem ipsum...</p>
+            </div> 
+
+            <button class="accordion">Are the tests supported?</button>
+            <div class="panel">
+                <p>Lorem ipsum...</p>
+            </div> 
+
+
+            
+        </div>
+
+    <section class="footer">
+        <div class="footer-content">
+                <div class="footer-section">
+                    <h4>INFORMATIONS</h4>
+                    <div class="info-buttons">
+                        <a href="CGU.html" class="info-button">Condition Générales d'Utilisation</a>
+                        <a href="mentions-légales.html" class="info-button">Mentions Légales</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>LOCALISATION</h4>
+                    <div class="mapouter">
+                        <div class="gmap_canvas">
+                            <iframe width="300" height="200" id="gmap_canvas" src="https://maps.google.com/maps?q=ISEP&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                            <a href="https://123movies-to.org"></a><br><style>.mapouter{position:center;text-align:right;height:200px;width:300px;}</style>
+                            <a href="https://www.embedgooglemap.net">embedgooglemap.net</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:200px;width:300px;}</style>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>NOUS CONTACTER</h4>
+                    <div class="contact-info">
+                        <p class="mail">Mail : testpsycho@aeropex.com</p>
+                        <p>Téléphone : 0112345678</p>
+                    </div>
+                </div>
+        </div>
+    
+        <div class="footer-bottom">
+            Aeropex G7C 2021
+        </div>
+    </section>  
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        
+        for (i = 0; i < acc.length; i++) {
+          acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+              panel.style.display = "none";
+            } else {
+              panel.style.display = "block";
+            }
+          });
+        }
+    </script> 
+</body>
+</html>
