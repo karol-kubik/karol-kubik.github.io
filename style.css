@@ -115,14 +115,14 @@ ul li.account a{
 .title-tests{
     text-align: center;
     padding-top: 40px;
-    font-size: 30px;
+    font-size: 25px;
     padding-bottom: 70px;
 }
 
 .column{
-    padding-top: 70px;
+    padding-top: 60px;
     float: left;
-    width: 33.33%;
+    width: 25%;
     pading: 15px;
 }
 
@@ -136,9 +136,8 @@ ul li.account a{
     text-align: center;
     padding-left: 50px;
     padding-right: 50px;
+    line-height: 20px;
 }
-
-
 
 .temp{
     padding-top: 5px;
@@ -146,6 +145,7 @@ ul li.account a{
     text-align: center;
     padding-left: 50px;
     padding-right: 50px;
+    line-height: 20px;
 }
 
 .react{
@@ -154,6 +154,16 @@ ul li.account a{
     text-align: center;
     padding-left: 50px;
     padding-right: 50px;
+    line-height: 20px;
+}
+
+.tonal{
+  padding-top: 12px;
+  font-size: 25px;
+  text-align: center;
+  padding-left: 50px;
+  padding-right: 50px;
+  line-height: 20px;
 }
 
 #stats{
@@ -169,6 +179,7 @@ ul li.account a{
     font-size: 30px;
     padding-bottom: 70px;
 }
+
 
 .data-column{
     padding-top: 60px;
