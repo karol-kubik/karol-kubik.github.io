@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Aeropex</title>
+	<link rel="stylesheet" type="text/css" href="style-a-propos.css">
+</head>
+<body>
+	<header>
+		<div class="main">
+			<div class="logo">
+				<a href="index.html">
+					<img src="logo.png">
+				</a>
+			</div>
+			<ul>
+				<li><a href="index.html">Accueil</a></li>
+				<li class="active"><a href="#">À propos de nous</a></li>
+				<li><a href="FAQ.html">FAQ</a></li>
+				<li><a href="#">Statistiques</a></li>
+				<li><a href="contact.html">Contact</a></li>
+				<li class="account"><a href="login.html">S'inscrire</a></li>
+				<li class="flag"><a href="#" title="Français">
+					<img alt="drapeau français" src="https://cdn1.iconfinder.com/data/icons/flags-of-the-world-2/128/france-circle-512.png" width="30" height="30" />
+				</a></li>
+			</ul>
+		</div>
+
+	</header>
+	<div class="title">
+		<h1>ABOUT US</h1>
+		<hr>
+	</div>
+	<div class = "title2">
+		<h2></h2>
+	</div>
+
+	<div class="container">
+		<h2> OUR STORY </h2>
+
+		<p align="justify">We are a young startup of six students named AEROPEX. We are responding to the call for tenders launched by the 
+INFINITE MEASURES company for the realization of a battery of psycho-technical tests aimed at evaluating the 
+aptitudes of potential aircraft pilots, and in particular fighter pilots. Our objective is to guarantee trainers 
+a reliable test that can meet their demanding expectations and allow them to know precisely the ability of a 
+subject to evolve serenely and efficiently in a particular environment, such as the cockpit of a fighter plane. 
+Our tests can be taken several times by each student, in order to quantify their progress during their training. </p>
+	</div>
+	<div class="container">
+		<h2> OUR OBJECTIVES</h2>
+	
+
+		<p align="justify">The purpose of our company is to participate in the defense of France, by training those who, tomorrow, will fly 
+over our heads to ensure the protection of the country. The design of this site aims at validating two requests 
+allowing us to fulfill our contract with INFINITE MEASURES. First of all, we would like this site to be a window 
+on the profession of fighter pilot, and to allow us to arouse the interest of visitors. That's why we attach a 
+lot of importance to its design, and not only to its functionality. In this regard, the choice of colors allows us
+ to recall the sky, the aviation (the blue of the sky, and the gray of the aircraft), while linking this with a 
+touch of modernity, and shades of pastel colors. In parallel, the site must allow to make the link between the 
+student pilots and their instructors: it is via this one that both can communicate, and that the results of each 
+student are published. Each student can see his results thanks to a private account to which only he has access, 
+while each instructor can publish and access the results of each of his affiliated students.
+</p>
+	</div>
+	<div class="container">
+		<h2> OUR STRATEGY </h2>
+	
+
+		<p align="justify">This site is obviously addressed first to the training center linked to the company that hires us, INFINITE 
+MEASURES, in order to list all the students tested as well as their results which will then be analyzed by the 
+trainers. The student officers will also be able to connect to the site to see their results in the different 
+tests, and their potential progress. However, passionate about what we do, we would also like to share our 
+experience, and some sections will allow a lambda user, without prior connection, to know a little better our 
+young company AEROPEX, as well as the company that hires us INFINITE MEASURES, and the different aspects of the 
+pilot's job it claims to train.</p>
+	</div>
+	<section class="footer">
+	<div class="footer-content">
+			<div class="footer-section">
+				<h4>INFORMATIONS</h4>
+				<div class="info-buttons">
+					<a href="CGU.html" class="info-button">Condition Générales d'Utilisation</a>
+					<a href="mentions-légales.html" class="info-button">Mentions Légales</a>
+				</div>
+			</div>
+			<div class="footer-section">
+				<h4>LOCALISATION</h4>
+				<div class="mapouter">
+					<div class="gmap_canvas">
+						<iframe width="300" height="200" id="gmap_canvas" src="https://maps.google.com/maps?q=ISEP&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+						<a href="https://123movies-to.org"></a><br><style>.mapouter{position:center;text-align:right;height:200px;width:300px;}</style>
+						<a href="https://www.embedgooglemap.net">embedgooglemap.net</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:200px;width:300px;}</style>
+					</div>
+				</div>
+			</div>
+			<div class="footer-section">
+				<h4>NOUS CONTACTER</h4>
+				<div class="contact-info">
+					<p class="mail">Mail : testpsycho@aeropex.com</p>
+					<p>Téléphone : 0112345678</p>
+				</div>
+			</div>
+	</div>
+
+	<div class="footer-bottom">
+		Aeropex G7C 2021
+	</div>
+</section>  
+</body>
+</html>
