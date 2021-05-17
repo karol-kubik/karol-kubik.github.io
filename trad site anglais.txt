@@ -42,4 +42,36 @@ Legal Notice
 Mail 
 Phone
 
+Page A Propos de Nous : ABOUT US
+
+- OUR STORY
+We are a young startup of six students named AEROPEX. We are responding to the call for tenders launched by the 
+INFINITE MEASURES company for the realization of a battery of psycho-technical tests aimed at evaluating the 
+aptitudes of potential aircraft pilots, and in particular fighter pilots. Our objective is to guarantee trainers 
+a reliable test that can meet their demanding expectations and allow them to know precisely the ability of a 
+subject to evolve serenely and efficiently in a particular environment, such as the cockpit of a fighter plane. 
+Our tests can be taken several times by each student, in order to quantify their progress during their training.
+
+- OUR OBJECTIVES
+The purpose of our company is to participate in the defense of France, by training those who, tomorrow, will fly 
+over our heads to ensure the protection of the country. The design of this site aims at validating two requests 
+allowing us to fulfill our contract with INFINITE MEASURES. First of all, we would like this site to be a window 
+on the profession of fighter pilot, and to allow us to arouse the interest of visitors. That's why we attach a 
+lot of importance to its design, and not only to its functionality. In this regard, the choice of colors allows us
+ to recall the sky, the aviation (the blue of the sky, and the gray of the aircraft), while linking this with a 
+touch of modernity, and shades of pastel colors. In parallel, the site must allow to make the link between the 
+student pilots and their instructors: it is via this one that both can communicate, and that the results of each 
+student are published. Each student can see his results thanks to a private account to which only he has access, 
+while each instructor can publish and access the results of each of his affiliated students.
+
+- OUR STRATEGY
+This site is obviously addressed first to the training center linked to the company that hires us, INFINITE 
+MEASURES, in order to list all the students tested as well as their results which will then be analyzed by the 
+trainers. The student officers will also be able to connect to the site to see their results in the different 
+tests, and their potential progress. However, passionate about what we do, we would also like to share our 
+experience, and some sections will allow a lambda user, without prior connection, to know a little better our 
+young company AEROPEX, as well as the company that hires us INFINITE MEASURES, and the different aspects of the 
+pilot's job it claims to train.
+
+
 
