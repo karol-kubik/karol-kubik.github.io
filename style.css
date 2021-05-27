@@ -71,14 +71,14 @@ ul li.account a{
 
 .intro{
     position: absolute;
-    top: 65%;
+    top: 68%;
     left: 50%;
     transform: translate(-50%,-50%);
 }
 
 .intro h2{
     color: white;
-    font-size: 40px;
+    font-size: 30px;
 }
 
 .page-wrapper{
@@ -107,7 +107,7 @@ ul li.account a{
 
 #tests{
     width: 100%;
-    height: 700px;
+    height: 800px;
     padding: 20px 0;
     background: #e5eefd;
 }
@@ -115,14 +115,14 @@ ul li.account a{
 .title-tests{
     text-align: center;
     padding-top: 40px;
-    font-size: 30px;
+    font-size: 25px;
     padding-bottom: 70px;
 }
 
 .column{
-    padding-top: 70px;
+    padding-top: 60px;
     float: left;
-    width: 33.33%;
+    width: 25%;
     pading: 15px;
 }
 
@@ -132,28 +132,41 @@ ul li.account a{
 
 .cardiac{
     padding-top: 10px;
-    font-size: 25px;
-    text-align: center;
+    font-size: 16px;
+    text-align: justify;
     padding-left: 50px;
     padding-right: 50px;
+    line-height: 20px;
+
 }
-
-
 
 .temp{
     padding-top: 5px;
-    font-size: 25px;
-    text-align: center;
+    font-size: 16px;
+    text-align: justify;
     padding-left: 50px;
     padding-right: 50px;
+    line-height: 20px;
 }
+
+
 
 .react{
     padding-top: 10px;
-    font-size: 25px;
-    text-align: center;
+    font-size: 16px;
+    text-align: justify;
     padding-left: 50px;
     padding-right: 50px;
+    line-height: 20px;
+}
+
+.tonal{
+  padding-top: 12px;
+  font-size: 16px;
+  text-align: justify;
+  padding-left: 50px;
+  padding-right: 50px;
+  line-height: 20px;
 }
 
 #stats{
@@ -169,6 +182,7 @@ ul li.account a{
     font-size: 30px;
     padding-bottom: 70px;
 }
+
 
 .data-column{
     padding-top: 60px;

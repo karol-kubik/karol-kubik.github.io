@@ -20,19 +20,18 @@ header{
     background-position: center;
 }
 
-.menu ul{
+ul{
     float:right;
     list-style-type: none;
     margin-top: 50px;
-    list-style-type: none;
 }
 
-.menu ul li{
+ul li{
     display: inline-block;
     margin-right: 15px;
 }
 
-.menu ul li a{
+ul li a{
     text-decoration: none;
     color: #fff;
     padding: 5px 15px;
@@ -41,19 +40,27 @@ header{
     border-radius: 10px;
 }
 
-.menu ul li a:hover{
+ul li a:hover{
     background-color: #fff;
     color: black;
 }
 
-.menu ul li.active a{
+ul li.active a{
     background-color: white;
     color: black;
 }
 
-.menu ul li.account a{
+ul li.account a{
     background-color: #417dde;
     color: white;
+}
+ul li.flag a {
+    background-color: rgba(65, 125, 222, 0);
+    color: white;
+}
+
+.flag img {
+    margin-top: auto;
 }
 
 .logo img{
@@ -61,6 +68,15 @@ header{
     width: 120px;
     height: auto;
     margin-top: 5px;
+}
+
+ul li.flag a {
+    background-color: rgba(65, 125, 222, 0);
+
+}
+
+.flag img {
+    margin-top: auto;
 }
 
 body{
@@ -80,7 +96,8 @@ body{
 	position:relative;
 	background:#f9f9f959; 
     border-radius: 40px;
-    padding-bottom: 40px;
+    padding : 50px;
+    margin-top: 30px;
 }
 
 .center form{
@@ -90,14 +107,9 @@ body{
 
 #questions input[type="text"], #questions input[type="text"], #questions input[type="text"], #questions input[type="text"], { font:400 12px/16px "Open Sans", Helvetica, Arial, sans-serif; }
 
-#questions {
-	padding:10px 30px;
-	margin:50px 0;
-    border-radius: 30px;
-}
 
-#FAQ h1 {
-	color: #373B44;
+h1 {
+	color: #000000;
 	display: block;
 	font-size: 30px;
 	font-weight: 400;
@@ -105,15 +117,60 @@ body{
     padding-bottom: 20px;
 }
 
+h2{
+    color: #373B44;
+	display: block;
+	font-size: 20px;
+	font-weight: 400;
+    text-align: center;
+    padding-bottom: 20px;
+}
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+    background-color: rgba(238, 238, 238, 0.753);
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+  }
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .active, .accordion:hover {
+    background-color: rgba(204, 204, 204, 0.493);
+  }
+  
+  /* Style the accordion panel. Note: hidden by default */
+  .panel {
+    padding: 0 18px;
+    background-color: rgba(255, 255, 255, 0.479);
+    display: none;
+    overflow: hidden;
+  }
+
+  .accordion:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+  }
+
 table{
     border-collapse: collapse; /*Les cellules du tableau sont collées*/
 }
 
 td /*Toutes les cellules des tableaux*/
 {
-    border: 1px solid black;
-    background-color: white;
+    border: 0.5px solid rgb(112, 112, 112);
+    background-color: rgba(255, 255, 255, 0.479);
+    padding : 10px;
+    margin-bottom: 10px;;    
 }
+
 
 hr{
 	width:25%;
