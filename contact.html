@@ -26,28 +26,28 @@
 
 	</header>
     <div class="container">  
-        <form id="contact" action="" method="post">
+        <form id="contact" action="contactform.php" method="post">
             <h1>CONTACT</h1>
             <hr>
             <div class="champs">
                 <div class="nomprenom">
                     <fieldset>
-                        <input placeholder="Nom" type="text" tabindex="1" required autofocus>
+                        <input placeholder="Nom" name="nom" type="text" tabindex="1" required autofocus>
                     </fieldset>
                     <fieldset>
-                        <input placeholder="Prénom" type="text" tabindex="1" required autofocus>
+                        <input placeholder="Prénom" name="prenom" type="text" tabindex="1" required autofocus>
                     </fieldset>
                 </div>
                 <div class="mailtel">
                     <fieldset>
-                        <input placeholder="Your Phone Number" type="tel" tabindex="3" required>
+                        <input placeholder="Your Phone Number" name="phone" type="tel" tabindex="3" required>
                     </fieldset>
                     <fieldset>
-                        <input placeholder="Your Email Address" type="email" tabindex="2" required>
+                        <input placeholder="Your Email Address" name="mail" type="email" tabindex="2" required>
                     </fieldset>
                 </div>
                 <fieldset class="large">
-                    <textarea placeholder="Type your Message Here...." tabindex="5" required></textarea>
+                    <textarea placeholder="Type your Message Here...." name="message" tabindex="5" required></textarea>
                 </fieldset>
                 <fieldset class="large">
                     <button name="Submit" type="submit" id="contact-submit" data-submit="...Sending">Envoyer votre message</button>
