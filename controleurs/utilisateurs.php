@@ -26,6 +26,7 @@ switch ($function) {
     
     case 'accueil':
         //affichage de l'accueil
+        $alerte = false;
         $vue = "accueil";
         $title = "Connexion à votre compte";
         break;
@@ -127,7 +128,7 @@ switch ($function) {
                 $entete = 'Bienvenue !';
 
                 $instructortemp = json_encode(estFormateur($bdd, $mail));
-                $instructor = $instructortemp[16];
+                $instructor = $instructortemp[12];
 
                 if($instructor == 1){
                     $groupidtemp = json_encode(rechercheGroupid($bdd, $mail));
