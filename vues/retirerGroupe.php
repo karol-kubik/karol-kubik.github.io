@@ -6,6 +6,8 @@
 
 <?php echo AfficheAlerte($alerte); ?>
 
+
+
 <form method="POST" action="">
 
     <label>Nom :</label>

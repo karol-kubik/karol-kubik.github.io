@@ -146,7 +146,7 @@ function supprimerUtilisateur(PDO $bdd, string $id){
  */
 function ajouteUtilisateur(PDO $bdd, array $utilisateur) {
     
-    $query = ' INSERT INTO users (username, password, nom, prenom, gender, birth, instructor,groupid) VALUES (:username, :password, :nom, :prenom, :gender, :birth, :instructor,0)';
+    $query = ' INSERT INTO users (username, password, nom, prenom, gender, birth, idrole,groupid) VALUES (:username, :password, :nom, :prenom, :gender, :birth, :idrole,0)';
     $donnees = $bdd->prepare($query);
     $donnees->bindParam(":username", $utilisateur['username'], PDO::PARAM_STR);
     $donnees->bindParam(":password", $utilisateur['password']);
@@ -154,7 +154,7 @@ function ajouteUtilisateur(PDO $bdd, array $utilisateur) {
     $donnees->bindParam(":prenom", $utilisateur['prenom']);
     $donnees->bindParam(":gender", $utilisateur['gender']);
     $donnees->bindParam(":birth", $utilisateur['birth']);
-    $donnees->bindParam(":instructor", $utilisateur['instructor']);
+    $donnees->bindParam(":idrole", $utilisateur['instructor']);
     return $donnees->execute();
     
 }
@@ -196,7 +196,7 @@ function mdpProvisoire(PDO $bdd, string $id, int $mdp) {
 
 function estFormateur(PDO $bdd, string $mail){
 
-    $statement = $bdd->prepare('SELECT instructor FROM  users WHERE username = :username');
+    $statement = $bdd->prepare('SELECT idrole FROM  users WHERE username = :username');
     $statement->bindParam(":username", $mail);
     $statement->execute();
 
