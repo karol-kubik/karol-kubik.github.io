@@ -28,7 +28,7 @@ switch ($function) {
         //affichage de l'accueil
         $alerte = false;
         $vue = "accueil";
-        $title = "Connexion à votre compte";
+        $title = false;
         break;
 
     case 'inscription':
@@ -77,14 +77,14 @@ switch ($function) {
                 
                 if ($retour) {
                     $entete = "Inscription réussie";
-                    $title = 'Connexion';
+                    $title = false;
                     $vue = 'accueil';
                 } else {
                     $alerte = "L'inscription n'a pas fonctionné";
                 }
             }
         }
-        $title = "Inscription";
+        $title = false;
         break;
 
 
@@ -106,7 +106,7 @@ switch ($function) {
     // Connexion de l'utilisateur
 
         $vue = "connexion";
-        $title = "Connexion";
+        $title = false;
         $alerte = false;
         if (isset($_POST['username']) and isset($_POST['password']))
         {
@@ -118,7 +118,7 @@ switch ($function) {
             if(empty($liste))
             {
                 $vue = "connexion";
-                $title = "Connexion";
+                $title = false;
                 $alerte = "Erreur de connexion";
             }
             else
@@ -135,12 +135,12 @@ switch ($function) {
                     $_SESSION["sessiongroupid"] = $groupidtemp[13];
                     $eleves = elevesGroupe($bdd, $_SESSION["sessiongroupid"]);
                     $entete = false;
-                    $title = "Bienvenue !";
+                    $title = false;
                     $vue = "formateur";
                 }
                 else {
                     $entete = false;
-                    $title = "Bienvenue !";
+                    $title = false;
                     $vue = "datatable";
                 }
             }
@@ -151,7 +151,7 @@ switch ($function) {
     // Envoi d'un mdp provisoire
 
         $vue = "resetmdp";
-        $title = "Envoi d'un mot de passe provisoire";
+        $title = false;
         $alerte = false;
         $subject = "Aeropex : Mot de passe provisoire";
         $headers = "From: admin@aeropex.fr";
@@ -170,7 +170,7 @@ switch ($function) {
                 mail($mail, $subject,$message,$headers);
                 $alerte = "Mail envoyé";
                 $vue = "accueil";
-                $title = "Connexion";
+                $title = false;
             }
             else {
                 $alerte = "Cet email n'est associé à aucun compte.";
@@ -184,7 +184,7 @@ switch ($function) {
         // Contact de l'administrateur
 
         $vue = "contact";
-        $title = "Contacter l'administrateur";
+        $title = false;
         $alerte = false;
         $mail = $_SESSION["sessionusername"];
         $nom = json_encode(recupNomAvecMail($bdd, $mail));
@@ -193,7 +193,7 @@ switch ($function) {
         if (isset($_POST['subject']) and isset($_POST['message']))
         {
             if (isset($_SESSION['sessiongroupid'])){
-                $type = "formateur";
+                $type = "utilisateur";
             }
             else {
                 $type = "élève";
@@ -205,7 +205,7 @@ switch ($function) {
             $message = "Un $type vous a envoyé un message ! \n\n Nom : $nom \n Prénom : $prenom \n Adresse mail : $mail \n\n Object de la demande : $object \n\n $contenu";
             mail('aeropextech@gmail.com', $subject,$message,$headers);
             $vue = "accueil";
-            $title = "Connexion";
+            $title = false;
             $alerte = "Mail envoyé";
 
         }
@@ -216,7 +216,7 @@ switch ($function) {
     case 'supprimer':
 
         $vue = "connexion";
-        $title = "Connexion";
+        $title = false;
         $alerte = "Reconnectez-vous afin de supprimer votre compte";
         $mail = $_SESSION["sessionusername"];
         $password = $_SESSION["sessionpassword"];
@@ -225,13 +225,13 @@ switch ($function) {
         $id = $idtemp[8];
         supprimerUtilisateur($bdd, $id);
         $vue = "accueil";
-        $title = "Compte supprimé !";
+        $alerte = "Compte supprimé !";
 
         break;
 
     case 'modifier':
         $vue = "modification";
-        $title = "Modification du compte";
+        $title = false;
         $alerte = false;
         $mail = $_SESSION["sessionusername"];
         $password = $_SESSION["sessionpassword"];
@@ -243,6 +243,9 @@ switch ($function) {
 
             } else if( !estUnMotDePasse($_POST['password'])) {
                 $alerte = "Le mot de passe n'est pas correct.";
+
+            } else if( !estUneDateCorrect($_POST['birth'])) {
+                $alerte = "Date de naissance incorrect";
 
             } else if($_POST['password'] != $_POST['confirm']){
                 $alerte = "Les mots de passes ne correspondent pas.";
@@ -265,7 +268,7 @@ switch ($function) {
                 if ($retour) {
                     $alerte = "Modification réussite";
                     $vue = "connexion";
-                    $title = "Connexion";
+                    $title = false;
                 } else {
                     $alerte = "Erreur de modification";
                 }
@@ -279,14 +282,14 @@ switch ($function) {
         session_destroy();
         $alerte = "Déconnecté !";
         $vue = "accueil";
-        $title = "Connexion";
+        $title = false;
 
 
         break;
 
     case 'ajouterGroupe' :
         $vue = "ajoutEleve";
-        $title = "Ajouter un élève au groupe";
+        $title = false;
         $alerte = false;
         $mail = $_SESSION["sessionusername"];
         $password = $_SESSION["sessionpassword"];
@@ -311,7 +314,7 @@ switch ($function) {
                 $vue = "formateur";
                 $alerte = "Eleve ajouté !";
                 $entete = false;
-                $title = "Bienvenue !";
+                $title = false;
             }
 
 
@@ -322,7 +325,7 @@ switch ($function) {
     case 'retirerEleve' :
 
         $vue = "retirerGroupe";
-        $title = "Retirer un élève du groupe";
+        $title = false;
         $alerte = false;
         $mail = $_SESSION["sessionusername"];
         $password = $_SESSION["sessionpassword"];
@@ -347,7 +350,7 @@ switch ($function) {
                 $vue = "formateur";
                 $alerte = "Eleve retiré du groupe !";
                 $entete = false;
-                $title = "Bienvenue !";
+                $title = false;
             }
 
 
@@ -358,7 +361,7 @@ switch ($function) {
     case 'ajoutTest' :
 
         $vue = "addtest";
-        $title = "Ajouter un test";
+        $title = false;
         $alerte = false;
         $groupid = $_SESSION["sessiongroupid"];
         if(isset($_POST['nom']) and isset($_POST['prenom']) and isset($_POST['bpm']) and isset($_POST['reaction']) and isset($_POST['temp'] )and isset($_POST['testdate']))
@@ -393,7 +396,7 @@ switch ($function) {
                     $vue = "formateur";
                     $alerte = "Données de test ajouté !";
                     $entete = false;
-                    $title = "Bienvenue !";
+                    $title = false;
                 }
                 else{
                     $alerte = "Cet élève n'existe pas ou ne fait pas partie de votre groupe.";
@@ -408,7 +411,7 @@ switch ($function) {
     default:
         // si aucune fonction ne correspond au paramètre function passé en GET
         $vue = "erreur404";
-        $title = "Error 404";
+        $title = false;
         $message = "Erreur 404 : la page recherchée n'existe pas.";
 }
 

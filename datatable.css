@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI";
+}
+
+header{
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+    height: 140px;
+    background-size: cover;
+    background-position: center;
+}
+
+.menu ul{
+    float:right;
+    list-style-type: none;
+    margin-top: 50px;
+    list-style-type: none;
+}
+
+.menu ul li{
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.menu ul li a{
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 15px;
+    border: solid transparent;
+    transition: 0.4s ease;
+    border-radius: 10px;
+}
+
+.menu ul li a:hover{
+    background-color: #fff;
+    color: black;
+}
+
+.menu ul li.active a{
+    background-color: white;
+    color: black;
+}
+
+.menu ul li.account a{
+    background-color: #417dde;
+    color: white;
+}
+
+.logo img{
+    float: left;
+    width: 120px;
+    height: auto;
+    margin-top: 5px;
+}
+
+body{
+
+    font-family: "Segoe UI";
+    background-size: cover;
+    background: #c5daff;
+    height: 100vh;
+}
+
+.entete{
+    margin-top: 50px;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.results{
+    margin-top: 120px;
+    margin-left: 100px;
+    background: rgba(255, 255, 255, 0.66);
+    border-radius: 15px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 35%;
+    margin-bottom: 20px;
+}
+p{
+    padding: 5px;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-radius: 20px;
+}
+table{
+    margin-top: 50px;
+    border-collapse: collapse;
+}
+th, td{
+    padding: 10px;
+}
+
+.myaccount{
+    margin-top: 80px;
+    margin-right: 100px;
+    background: rgba(255, 255, 255, 0.66);
+    border-radius: 15px;
+    padding: 20px;
+    width: 30%;
+}
+
+.myaccount h3{
+    text-align: center;
+}
+
+.buttons a{
+    border:  1px solid black;
+    padding: 0px 5px;
+    text-decoration: none;
+    border-radius: 20px;
+    background-color: #38455a;
+    color: white;
+}

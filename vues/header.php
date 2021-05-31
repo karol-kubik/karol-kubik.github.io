@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?php echo $title; ?></title>
+    <h5><?php echo $title; ?></h5>
     
     <style>
         h1 {
@@ -16,9 +16,5 @@
     </style>
 </head>
 <body>
-
-    <header>
-        <h1><?php echo $title; ?></h1>
-    </header>
     
     

@@ -5,17 +5,50 @@
 ?>
 
 <?php echo AfficheAlerte($alerte); ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacter un administrateur</title>
+    <link rel="stylesheet" type="text/css" href="contactphp.css">
+</head>
+<body>
+<header>
+    <div class="main">
+        <div class="logo">
+            <a href= "index.html"><img src="logo.png" alt="logo aeropex" /></a>
+        </div>
+        <div class = "menu">
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="a-propos.html">A propos de nous</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Statistiques</a></li>
+                <li><a href="contact.html">Contact</a></li>
 
-<form method="POST" action="">
+            </ul>
+        </div>
+    </div>
 
-    <label>Object :</label>
-    <input type="text"  name="subject" /><br>
+</header>
+    <div class="center">
+        <h2>CONTACTER UN ADMINISTRATEUR</h2>
+        <form method="POST" action="">
+            <div class="txt_field">
+                <label>Object :</label>
+                <input type="text"  name="subject" /><br>
+            </div>
+            <div class="txt_field" id="message">
+                <label>Message :</label>
+                <textarea type="text" name="message" required></textarea><br>
+            </div>
 
-    <label>Message :</label>
-    <textarea type="text" name="message" required></textarea><br>
+            <button type="submit" name="submit">Envoyer une requête</button>
 
-    <button type="submit" name="submit">Envoyer une requête</button>
+        </form>
 
-</form>
-
-<p><a href="index.php">Retour</a></p>
+        <p><a href="javascript:history.back()">Retour</a></p>
+    </div>
+<br>
+</body>
+</html>
