@@ -40,7 +40,6 @@
                 <thead>
                 <tr>
                     <th>Temp de réaction test visuel(en ms)</th>
-                    <th>Temp de réaction test auditif(en ms)</th>
                     <th>BPM</th>
                     <th>Température</th>
                     <th>Date du dernier test</th>
@@ -53,9 +52,6 @@
                 <tr>
                     <td>
                         <p><?php echo $element['reaction']; ?></p>
-                    </td>
-                    <td>
-                        <p>247</p>
                     </td>
                     <td>
                         <p><?php echo $element['bpm']; ?></p>
