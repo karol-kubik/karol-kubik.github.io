@@ -26,32 +26,57 @@ $Faq = $pdoStatFAQ -> fetchAll();
 <head>
     <meta charset="UTF-8">
     <title>Admin panel</title>
+    <script src="https://kit.fontawesome.com/c4ed8ae3a6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="StyleAdminPanel.css">
 </head>
 <body>
+<header>
+    <h1 class="titre">BACK OFFICE AEROPEX</h1>
+</header>
 
-<h1> Liste utilisateurs</h1>
+<h1> <i class="fas fa-users"></i> Liste utilisateurs <i class="fas fa-users"></i> </h1>
+
 <ul>
     <?php foreach ($users as $user):?>
     <li>
-       <span><?=$user['id_utilisateur']?> <?=$user['first_name']?> <?=$user['last_name']?> <?= $user['age']?> <?= $user['genre']?> <?= $user['tel']?></span>
+       <span><?=$user['id_utilisateur']?>       <?=$user['first_name']?> <?=$user['last_name']?>     <?= $user['age']?> <?= $user['genre']?>    <?= $user['tel']?></span>
     </li>
-        <a href="../Utilisateur/supprimer.php?id_utilisateur=<?= $user['id_utilisateur']?>" > Suprrimer l'utilisateur </a>
-        <a href="../Utilisateur/user_modification.php?id_utilisateur=<?= $user['id_utilisateur']?>"> Modifier l'utilisateur </a>
+        <a onclick="confirmationModUser()" href="../Utilisateur/user_modification.php?id_utilisateur=<?= $user['id_utilisateur']?>"> <i class="fas fa-user-edit"></i> </a>
+        <a onclick="confirmationDelUser()" href="../Utilisateur/supprimer.php?id_utilisateur=<?= $user['id_utilisateur']?>" > <i class="fas fa-user-slash"></i> </a>
+
     <?php endforeach;?>
 </ul>
 
-<h1>Panel FAQ</h1>
+<h1> <i class="fas fa-comments"></i>  Panel FAQ <i class="fas fa-comments"></i> </h1>
+<a href="../Partie_FAQ/faq_add.php"> <i class="fas fa-comment-medical"></i> Ajout d'une Faq</a>
 <ul>
+
     <?php foreach($Faq as $question):?>
     <li>
-        <?= $question['question']?> <?= $question['answer']?>
+        <?= $question['question']?> <br/> <?= $question['answer']?>
     </li>
 
-    <a href="../Partie_FAQ/faq_modification.php?id_faq=<?= $question['id_faq']?>">Modifier</a>
-    <a href="../Partie_FAQ/faq_supprimer.php?id_faq=<?= $question['id_faq']?>">supprimer</a>
+    <a onclick="confirmationModFaq()" href="../Partie_FAQ/faq_modification.php?id_faq=<?= $question['id_faq']?>"> <i class="fas fa-pen-square"></i> </a>
+    <a onclick="confirmationDelFaq()" href="../Partie_FAQ/faq_supprimer.php?id_faq=<?= $question['id_faq']?>"> <i class="fas fa-trash-alt"></i> </a>
 
     <?php endforeach;?>
 
+
 </ul>
+<script>
+    function confirmationModUser(){
+        return confirm("Voulez-vous modifier cet utilisateur?");
+    }
+    function confirmationDelUser(){
+        return confirm("Voulez-vous supprimer cet utilisateur?");
+    }
+    function confirmationModFaq(){
+        return confirm("Voulez-vous modifier cet Faq?");
+    }
+    function confirmationDelFaq(){
+        return confirm("Voulez-vous modifier cet utilisateur?");
+    }
+</script>
+
 </body>
 </html>

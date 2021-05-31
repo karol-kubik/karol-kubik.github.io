@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI";
+}
+
+header{
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+    height: 140px;
+    background-size: cover;
+    background-position: center;
+}
+
+ul{
+    float:right;
+    list-style-type: none;
+    margin-top: 50px;
+}
+
+ul li{
+    display: inline-block;
+    margin-right: 15px;
+}
+
+ul li a{
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 15px;
+    border: solid transparent;
+    transition: 0.4s ease;
+    border-radius: 10px;
+}
+
+ul li a:hover{
+    background-color: #fff;
+    color: black;
+}
+
+ul li.active a{
+    background-color: white;
+    color: black;
+}
+
+ul li.account a{
+    background-color: #417dde;
+    color: white;
+}
+ul li.flag a {
+    background-color: rgba(65, 125, 222, 0);
+    color: white;
+}
+
+.flag img {
+    margin-top: auto;
+}
+
+.logo img{
+    float: left;
+    width: 120px;
+    height: auto;
+    margin-top: 5px;
+}
+
+.info-display{
+    display: flex;
+}
+
+.chart-container{
+    align-items: center;
+    margin:3% 38%;
+    position: absolute;
+    height: 30vh;
+    width: 30vw;
+}
+
+.legend-container{
+    margin: 10% 10%;
+}

@@ -19,14 +19,18 @@ if($executeIsOk){
 <!doctype html>
 <html lang="fr">
 <head>
+    <link rel="stylesheet" href="StyleActionFaq.css" />
     <meta charset="UTF-8">
     <title>Update?</title>
 </head>
 <body>
 <p>
     <?php echo $message ?> </p>
-</body>
 
-<a href="../Admin_Panel/AdminPanel.php"> Retour Admin Panel</a>
+
+<a class="retour_adminpanel" href="../Admin_Panel/AdminPanel.php">
+    Retour Admin Panel
+</a>
+</body>
 
 </html>

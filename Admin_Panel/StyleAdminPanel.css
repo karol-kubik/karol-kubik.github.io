@@ -1,0 +1,34 @@
+*{
+    font-family: "Arial Black", serif;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+}
+
+header{
+    background: #0099CC;
+}
+body{
+    background:aliceblue;
+}
+/* Partie Icon */
+.fa-user-edit{
+    color: #417dde;
+}
+.fa-user-slash{
+    color: crimson;
+}
+.fa-pen-square{
+    color: #417dde;
+}
+.fa-trash-alt{
+    color: crimson;
+}
+
+li{
+    list-style: none;
+}
+a{
+    color: darkolivegreen;
+    text-decoration: none;
+}
