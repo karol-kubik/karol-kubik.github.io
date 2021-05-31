@@ -68,7 +68,7 @@
                             <p><?php echo $element['prenom']; ?></p>
                         </td>
                         <td>
-                            <p><?php if ($element['gender'] == 1) {echo "Homme";} else {echo "femme";} ?></p>
+                            <p><?php if ($element['gender'] == 1) {echo "Homme";} else {echo "Femme";} ?></p>
                         </td>
                         <td>
                             <p><?php echo $element['birth']; ?></p>

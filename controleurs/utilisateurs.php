@@ -193,7 +193,7 @@ switch ($function) {
         if (isset($_POST['subject']) and isset($_POST['message']))
         {
             if (isset($_SESSION['sessiongroupid'])){
-                $type = "formateur";
+                $type = "utilisateur";
             }
             else {
                 $type = "élève";
@@ -243,12 +243,6 @@ switch ($function) {
 
             } else if( !estUnMotDePasse($_POST['password'])) {
                 $alerte = "Le mot de passe n'est pas correct.";
-
-            } else if(rechercheMail($bdd, $_POST['username'])) {
-                $alerte = "Cet email est déjà utilisé";
-
-            } else if(rechercheNom($bdd, $_POST['nom']) AND recherchePrenom($bdd, $_POST['prenom'])) {
-                $alerte = "Ces nom et prénom sont déjà utilisés";
 
             } else if( !estUneDateCorrect($_POST['birth'])) {
                 $alerte = "Date de naissance incorrect";
