@@ -4,41 +4,89 @@
  */
 ?>
 
-session_start();
+
 
 <?php echo AfficheAlerte($alerte); ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modifier mes données</title>
+    <script>
+        function confirmation() {
+            alert("Voulez-vous vraiment modifier vos données ?");
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="modification.css">
+</head>
+<body>
+<header>
+    <div class="main">
+        <div class="logo">
+            <a href= "index.html"><img src="logo.png" alt="logo aeropex" /></a>
+        </div>
+        <div class = "menu">
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="a-propos.html">A propos de nous</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Statistiques</a></li>
+                <li><a href="contact.html">Contact</a></li>
 
-<?php foreach ($liste as $element) { ?>
+            </ul>
+        </div>
+    </div>
 
-<h2>Modifier mes données personnels :</h2>
-<form method="POST" action="">
+</header>
+    <div class="center">
+    <?php foreach ($liste as $element) { ?>
 
-    <label>Adresse Mail :</label>
-    <input type="text"  name="username" value ="<?php echo $element['username']; ?>" required/><br>
+        <h2>Modifier mes données personnels :</h2>
+        <form method="POST" action="">
+            <div class="txt_field">
+                <label></label>
+                <input type="text"  name="username" value ="<?php echo $element['username']; ?>" required/><br>
+            </div>
 
-    <label>Mot de passe :</label>
-    <input type="password"  name="password" value ="<?php echo $element['password']; ?>" required/><br>
+            <div class="txt_field">
+                <label></label>
+                <input type="password"  name="password" value ="<?php echo $element['password']; ?>" required/><br>
+            </div>
 
-    <label>Confirmer le mot de passe :</label>
-    <input type="password"  name="confirm"  /><br>
+            <div class="txt_field">
+                <label>Confirmer le mot de passe :</label>
+                <input type="password"  name="confirm"  /><br>
+            </div>
 
-    <label>Nom :</label>
-    <input type="text"  name="nom" value ="<?php echo $element['nom']; ?>" required/><br>
+            <div class="txt_field">
+                <label></label>
+                <input type="text"  name="nom" value ="<?php echo $element['nom']; ?>" required/><br>
+            </div>
 
-    <label>Prénom :</label>
-    <input type="text"  name="prenom" value ="<?php echo $element['prenom']; ?>" required/><br>
+            <div class="txt_field">
+                <label></label>
+                <input type="text"  name="prenom" value ="<?php echo $element['prenom']; ?>" required/><br>
+            </div>
 
-    <label>Date de naissance :</label>
-    <input type="date"  name="birth" value ="<?php echo $element['birth']; ?>" required/><br>
+            <div class="txt_field">
+                <p>Date de naissance</p>
+                <!--<label>Date de naissance :</label>-->
+                <input type="date"  name="birth" value ="<?php echo $element['birth']; ?>" required/><br>
+            </div>
 
-    <button type="submit" name="submit">Modifier</button>
 
-</form>
+            <button type="submit" onclick="confirmation()" name="submit">Modifier</button>
 
-<?php } ?>
+        </form>
 
-<?php if(isset($alerte)) { echo AfficheAlerte($alerte);} ?>
+        <?php } ?>
 
-<p>
-    <a href="../karol-kubik.github.io/index.php">Retour</a>
-</p>
+        <?php if(isset($alerte)) { echo AfficheAlerte($alerte);} ?>
+
+        <p>
+            <a href="../index.php">Retour</a>
+        </p>
+    </div>
+    <br>
+</body>
+</html>
