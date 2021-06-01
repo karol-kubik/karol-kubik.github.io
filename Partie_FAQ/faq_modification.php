@@ -12,27 +12,30 @@ $faqSelected = $pdoStatModFAQ->fetch();
 ?>
 
 <!doctype html>
-<html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="CRUDStyle.css">
     <title>modification faq</title>
 </head>
 <body>
-<h1>Modifier Faq</h1>
+<div class="info-box">
+<h2>Modifier Faq</h2>
 <form action="update_faq.php" method="post">
-    <input type="hidden" name="id_faq" value="<?= $faqSelected['id_faq'] ?>" >
-    <p>
+    <input class="text-input" type="hidden" name="id_faq" value="<?= $faqSelected['id_faq'] ?>" >
+    <p class="input-box">
         <label for="question">Question</label>
-        <input type="text" id="question" name="question" value="<?= $faqSelected['question']; ?>">
+        <input  class="text-input" type="text" id="question" name="question" value="<?= $faqSelected['question']; ?>">
     </p>
-    <p>
+    <p class="input-box">
         <label for="answer">Reponse</label>
-        <input type="text" id="answer" name="answer" value="<?= $faqSelected['answer']; ?>">
+        <input class="text-input" type="text" id="answer" name="answer" value="<?= $faqSelected['answer']; ?>">
     </p>
     <p><input type="submit" value="update"> </p>
 
 
 </form>
+</div>
 </body>
 </html>
 
