@@ -407,6 +407,48 @@ switch ($function) {
 
         break;
 
+    case 'serverdata' :
+        //phpinfo();
+        $vue = false;
+        $title = false;
+        $alerte = false;
+        $ch = curl_init();
+        curl_setopt(
+            $ch,
+            CURLOPT_URL,
+            "http://projets-tomcat.isep.fr:8080/appService/?ACTION=GETLOG&TEAM=G7Cy");
+        curl_setopt($ch, CURLOPT_HEADER, FALSE);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+        $data = curl_exec($ch);
+        curl_close($ch);
+        echo "Raw Data:<br />";
+        echo("$data");
+
+        $data_tab = $data;
+
+        $trame = $data_tab;
+        // décodage avec des substring
+        $t = substr($trame,0,1);
+        $o = substr($trame,1,4);
+        $r = substr($trame,4,1);
+        $c = substr($trame,5,1);
+        $n = substr($trame,6,2);
+        $v = substr($trame,8,4);
+        $a = substr($trame,12,4);
+        $x = substr($trame,16,2);
+        $year = substr($trame,18,4);
+        $month = substr($trame,22,2);
+        $day = substr($trame,24,2);
+        $hour = substr($trame,26,2);
+        $min = substr($trame,28,2);
+        $sec = substr($trame,30,2);
+        // décodage avec sscanf
+        list($t, $o, $r, $c, $n, $v, $a, $x, $year, $month, $day, $hour, $min, $sec) =
+            sscanf($trame,"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
+        echo("<br />$t,$o,$r,$c,$n,$v,$a,$x,$year,$month,$day,$hour,$min,$sec<br />");
+
+        break;
+
 
     default:
         // si aucune fonction ne correspond au paramètre function passé en GET
