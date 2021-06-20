@@ -409,44 +409,107 @@ switch ($function) {
 
     case 'serverdata' :
         //phpinfo();
-        $vue = false;
+        $vue = "testserver";
         $title = false;
         $alerte = false;
-        $ch = curl_init();
-        curl_setopt(
-            $ch,
-            CURLOPT_URL,
-            "http://projets-tomcat.isep.fr:8080/appService/?ACTION=GETLOG&TEAM=G7Cy");
-        curl_setopt($ch, CURLOPT_HEADER, FALSE);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-        $data = curl_exec($ch);
-        curl_close($ch);
-        echo "Raw Data:<br />";
-        echo("$data");
+        $groupid = $_SESSION["sessiongroupid"];
+        if(isset($_POST['nom']) and isset($_POST['prenom']))
+        {
+            if( !estUneChaine($_POST['nom'])) {
+                $alerte = "Le nom d'utilisateur doit être une chaîne de caractère.";
+            }
 
-        $data_tab = $data;
+            else if( !estUneChaine($_POST['prenom'])) {
+                $alerte = "Le prénom d'utilisateur doit être une chaîne de caractère.";
+            }
 
-        $trame = $data_tab;
-        // décodage avec des substring
-        $t = substr($trame,0,1);
-        $o = substr($trame,1,4);
-        $r = substr($trame,4,1);
-        $c = substr($trame,5,1);
-        $n = substr($trame,6,2);
-        $v = substr($trame,8,4);
-        $a = substr($trame,12,4);
-        $x = substr($trame,16,2);
-        $year = substr($trame,18,4);
-        $month = substr($trame,22,2);
-        $day = substr($trame,24,2);
-        $hour = substr($trame,26,2);
-        $min = substr($trame,28,2);
-        $sec = substr($trame,30,2);
-        // décodage avec sscanf
-        list($t, $o, $r, $c, $n, $v, $a, $x, $year, $month, $day, $hour, $min, $sec) =
-            sscanf($trame,"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
-        echo("<br />$t,$o,$r,$c,$n,$v,$a,$x,$year,$month,$day,$hour,$min,$sec<br />");
+            else{
+                $nom = $_POST['nom'];
+                $prenom = $_POST['prenom'];
+                $idtemp = json_encode(rechercheIDparNomPrenom($bdd, $nom, $prenom));
+                $id = $idtemp[8];
 
+                $groupidtemp = json_encode(rechercheGroupidParNom($bdd, $nom, $prenom));
+                $groupideleve = $groupidtemp[13];
+
+                if ($groupideleve == $groupid){
+
+                    /*$ch = curl_init();
+                    curl_setopt(
+                        $ch,
+                        CURLOPT_URL,
+                        "http://projets-tomcat.isep.fr:8080/appService/?ACTION=GETLOG&TEAM=G7Cy");
+                    curl_setopt($ch, CURLOPT_HEADER, FALSE);
+                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+                    $data = curl_exec($ch);
+                    curl_close($ch);
+                    //echo "Raw Data:<br />";
+                    //echo("$data");
+
+                    $data_tab = $data;
+
+                    $trame = $data_tab;*/
+
+                    $trame = "1G7Cy130112340000ba20210615154058"; //1 G7Cy 1 3 01 1234 0000 ba 2021 06 15 15 40 58
+                    // décodage avec des substring
+                    $t = substr($trame,0,1); //type de trame (1 = longeur fixe, 2 = longeur variable)
+                    $o = substr($trame,1,4); //numéro objet (ici G7Cy)
+                    $r = substr($trame,4,1); //type requête (1 = récup une valeur du capteur, 2 = envoyer une commande)
+                    $c = substr($trame,5,1); //type de capteur
+                    $n = substr($trame,6,2); //numéro capteur
+                    $v = substr($trame,8,4); //valeur du test
+                    $a = substr($trame,12,4); //numéro de trame
+                    $x = substr($trame,16,2); //checksum
+                    $year = substr($trame,18,4); //année
+                    $month = substr($trame,22,2); //mois
+                    $day = substr($trame,24,2); //jour
+                    $hour = substr($trame,26,2); //heures
+                    $min = substr($trame,28,2); //minutes
+                    $sec = substr($trame,30,2); //secondes
+                    // décodage avec sscanf
+                    list($t, $o, $r, $c, $n, $v, $a, $x, $year, $month, $day, $hour, $min, $sec) =
+                        sscanf($trame,"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
+                    //echo("<br />$t,$o,$r,$c,$n,$v,$a,$x,$year,$month,$day,$hour,$min,$sec<br />");
+                    switch($c) {
+                        case 3 :
+                            $bpm = "0";
+                            $temp = $v;
+                            $reaction = "0";
+                            break;
+
+                        case 7 :
+                            $bpm = $v;
+                            $temp = "0";
+                            $reaction = "0";
+                            break;
+
+                        case 9 :
+                            $bpm = "0";
+                            $temp = "0";
+                            $reaction = $v;
+                            break;
+                    }
+                    $testdate = "{$year}-{$month}-{$day}";
+                    $values = [
+                        'bpm' => $bpm,
+                        'temp' => $temp,
+                        'reaction' => $reaction,
+                        'testdate' => $testdate
+                    ];
+                    ajoutTest($bdd, $values,$id);
+                    $eleves = elevesGroupe($bdd, $_SESSION["sessiongroupid"]);
+                    $liste = rechercheParNom($bdd, $_SESSION["sessionusername"], $_SESSION["sessionpassword"]);
+                    $vue = "formateur";
+                    $alerte = "Données de test ajouté !";
+                    $entete = false;
+                    $title = false;
+                }
+                else{
+                    $alerte = "Cet élève n'existe pas ou ne fait pas partie de votre groupe.";
+                }
+
+            }
+        }
         break;
 
 
