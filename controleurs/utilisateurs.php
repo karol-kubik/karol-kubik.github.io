@@ -408,12 +408,12 @@ switch ($function) {
         break;
 
     case 'serverdata' :
-        //phpinfo();
+
         $vue = "testserver";
         $title = false;
         $alerte = false;
         $groupid = $_SESSION["sessiongroupid"];
-        if(isset($_POST['nom']) and isset($_POST['prenom']))
+        if(isset($_POST['nom']) and isset($_POST['prenom']) and isset($_POST['tests']))
         {
             if( !estUneChaine($_POST['nom'])) {
                 $alerte = "Le nom d'utilisateur doit être une chaîne de caractère.";
@@ -426,6 +426,7 @@ switch ($function) {
             else{
                 $nom = $_POST['nom'];
                 $prenom = $_POST['prenom'];
+                $test = $_POST['tests'];
                 $idtemp = json_encode(rechercheIDparNomPrenom($bdd, $nom, $prenom));
                 $id = $idtemp[8];
 
@@ -434,7 +435,7 @@ switch ($function) {
 
                 if ($groupideleve == $groupid){
 
-                    /*$ch = curl_init();
+                    $ch = curl_init();
                     curl_setopt(
                         $ch,
                         CURLOPT_URL,
@@ -443,14 +444,13 @@ switch ($function) {
                     curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
                     $data = curl_exec($ch);
                     curl_close($ch);
-                    //echo "Raw Data:<br />";
-                    //echo("$data");
 
                     $data_tab = $data;
 
-                    $trame = $data_tab;*/
+                    $trame = $data_tab;
 
-                    $trame = "1G7Cy130112340000ba20210615154058"; //1 G7Cy 1 3 01 1234 0000 ba 2021 06 15 15 40 58
+                    //$trame = "1G7Cy130112340000ba20210615154058"; //1 G7Cy 1 3 01 1234 0000 ba 2021 06 15 15 40 58
+
                     // décodage avec des substring
                     $t = substr($trame,0,1); //type de trame (1 = longeur fixe, 2 = longeur variable)
                     $o = substr($trame,1,4); //numéro objet (ici G7Cy)
@@ -467,36 +467,40 @@ switch ($function) {
                     $min = substr($trame,28,2); //minutes
                     $sec = substr($trame,30,2); //secondes
                     // décodage avec sscanf
-                    list($t, $o, $r, $c, $n, $v, $a, $x, $year, $month, $day, $hour, $min, $sec) =
-                        sscanf($trame,"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
+                    //list($t, $o, $r, $c, $n, $v, $a, $x, $year, $month, $day, $hour, $min, $sec) =
+                        //sscanf($trame,"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
                     //echo("<br />$t,$o,$r,$c,$n,$v,$a,$x,$year,$month,$day,$hour,$min,$sec<br />");
-                    switch($c) {
-                        case 3 :
-                            $bpm = "0";
+                    switch($test) {
+                        case 'temp' :
                             $temp = $v;
-                            $reaction = "0";
+                            $testdate = "{$year}-{$month}-{$day}";
+                            $values = [
+                                'temp' => $temp,
+                                'testdate' => $testdate
+                            ];
+                            ajoutTemp($bdd, $values,$id);
                             break;
 
-                        case 7 :
+                        case 'bpm' :
                             $bpm = $v;
-                            $temp = "0";
-                            $reaction = "0";
+                            $testdate = "{$year}-{$month}-{$day}";
+                            $values = [
+                                'temp' => $bpm,
+                                'testdate' => $testdate
+                            ];
+                            ajoutBPM($bdd, $values,$id);
                             break;
 
-                        case 9 :
-                            $bpm = "0";
-                            $temp = "0";
+                        case 'reacled' :
                             $reaction = $v;
+                            $testdate = "{$year}-{$month}-{$day}";
+                            $values = [
+                                'temp' => $reaction,
+                                'testdate' => $testdate
+                            ];
+                            ajoutReac($bdd, $values,$id);
                             break;
                     }
-                    $testdate = "{$year}-{$month}-{$day}";
-                    $values = [
-                        'bpm' => $bpm,
-                        'temp' => $temp,
-                        'reaction' => $reaction,
-                        'testdate' => $testdate
-                    ];
-                    ajoutTest($bdd, $values,$id);
                     $eleves = elevesGroupe($bdd, $_SESSION["sessiongroupid"]);
                     $liste = rechercheParNom($bdd, $_SESSION["sessionusername"], $_SESSION["sessionpassword"]);
                     $vue = "formateur";

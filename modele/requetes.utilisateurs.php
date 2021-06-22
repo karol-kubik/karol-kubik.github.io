@@ -186,6 +186,39 @@ function ajoutTest(PDO $bdd, array $data , int $id) {
 
 }
 
+function ajoutReac(PDO $bdd, array $data , int $id) {
+
+    $query = ' UPDATE users SET reaction = :reaction, testdate = :testdate WHERE id = :id';
+    $donnees = $bdd->prepare($query);
+    $donnees->bindParam(":id", $id, PDO::PARAM_STR);
+    $donnees->bindParam(":reaction", $data['reaction']);
+    $donnees->bindParam(":testdate", $data['testdate']);
+    return $donnees->execute();
+
+}
+
+function ajoutBPM(PDO $bdd, array $data , int $id) {
+
+    $query = ' UPDATE users SET bpm = :bpm, testdate = :testdate WHERE id = :id';
+    $donnees = $bdd->prepare($query);
+    $donnees->bindParam(":id", $id, PDO::PARAM_STR);
+    $donnees->bindParam(":bpm", $data['bpm'], PDO::PARAM_STR);
+    $donnees->bindParam(":testdate", $data['testdate']);
+    return $donnees->execute();
+
+}
+
+function ajoutTemp(PDO $bdd, array $data , int $id) {
+
+    $query = ' UPDATE users SET temp = :temp, testdate = :testdate WHERE id = :id';
+    $donnees = $bdd->prepare($query);
+    $donnees->bindParam(":id", $id, PDO::PARAM_STR);
+    $donnees->bindParam(":temp", $data['temp']);
+    $donnees->bindParam(":testdate", $data['testdate']);
+    return $donnees->execute();
+
+}
+
 function mdpProvisoire(PDO $bdd, string $id, int $mdp) {
     $query = ' UPDATE users SET password = :password WHERE id = :id';
     $donnees = $bdd->prepare($query);

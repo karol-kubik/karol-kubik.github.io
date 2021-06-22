@@ -32,7 +32,7 @@
 
 </header>
 <div class="center">
-    <h1>REALISATION TEST</h1>
+    <h1>DÉBUTER UN TEST</h1>
     <form method="POST" action="">
         <div class="txt_field">
             <label>Nom :</label>
@@ -42,8 +42,18 @@
             <label>Prénom :</label>
             <input type="text"  name="prenom"required/>
         </div>
+        <div>
+            <label>Choissisez un test :</label>
+            <select name="tests" id="tests-select">
+                <option value="micro">Test de tonalité</option>
+                <option value="bpm">Test cardiaque</option>
+                <option value="temp">Test de température</option>
+                <option value="reacled">Test de réaction LED</option>
+                <option value="reacson">Test de réaction son</option>
+            </select>
+        </div>
 
-        <button type="submit" name="submit">Réaliser un test</button>
+        <button type="submit" name="submit">Lancer le test</button>
 
     </form>
 

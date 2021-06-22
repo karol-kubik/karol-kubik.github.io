@@ -41,7 +41,7 @@
                 <tr>
                     <th>Temp de réaction test visuel(en ms)</th>
                     <th>BPM</th>
-                    <th>Température</th>
+                    <th>Température (en °C)</th>
                     <th>Date du dernier test</th>
                 </tr>
                 </thead>

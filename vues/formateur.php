@@ -110,7 +110,7 @@
             <?php } ?>
 
             <div class="buttons">
-            <p><a href="index.php?cible=utilisateurs&fonction=serverdata">Réaliser un test</a></p>
+            <p><a href="index.php?cible=utilisateurs&fonction=serverdata">Débuter un test</a></p>
 
             <p><a href="index.php?cible=utilisateurs&fonction=ajouterGroupe">Ajouter un élève au groupe</a></p>
 
