@@ -439,7 +439,7 @@ switch ($function) {
                     curl_setopt(
                         $ch,
                         CURLOPT_URL,
-                        "http://projets-tomcat.isep.fr:8080/appService/?ACTION=GETLOG&TEAM=G7Cy");
+                        "http://projets-tomcat.isep.fr:8080/appService/?ACTION=GETLOG&TEAM=G7Cb");
                     curl_setopt($ch, CURLOPT_HEADER, FALSE);
                     curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
                     $data = curl_exec($ch);
@@ -467,10 +467,10 @@ switch ($function) {
                     $min = substr($trame,28,2); //minutes
                     $sec = substr($trame,30,2); //secondes
                     // décodage avec sscanf
-                    //list($t, $o, $r, $c, $n, $v, $a, $x, $year, $month, $day, $hour, $min, $sec) =
-                        //sscanf($trame,"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
-                    //echo("<br />$t,$o,$r,$c,$n,$v,$a,$x,$year,$month,$day,$hour,$min,$sec<br />");
-                    switch($test) {
+                    list($t, $o, $r, $c, $n, $v, $a, $x, $year, $month, $day, $hour, $min, $sec) =
+                        sscanf($trame,"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
+                    echo("<br />$t,$o,$r,$c,$n,$v,$a,$x,$year,$month,$day,$hour,$min,$sec<br />");
+                    /*switch($test) {
                         case 'temp' :
                             $temp = $v;
                             $testdate = "{$year}-{$month}-{$day}";
@@ -500,7 +500,18 @@ switch ($function) {
                             ];
                             ajoutReac($bdd, $values,$id);
                             break;
-                    }
+                    }*/
+
+                    $testdate = "{$year}-{$month}-{$day}";
+
+                    $values = [
+                        'temp' => 0,
+                        'bpm' => 0,
+                        'reaction' => $v,
+                        'testdate' => $testdate
+                    ];
+                    ajoutTest($bdd, $values,$id);
+
                     $eleves = elevesGroupe($bdd, $_SESSION["sessiongroupid"]);
                     $liste = rechercheParNom($bdd, $_SESSION["sessionusername"], $_SESSION["sessionpassword"]);
                     $vue = "formateur";
